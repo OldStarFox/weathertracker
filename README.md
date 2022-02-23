@@ -70,7 +70,7 @@ Weather Tracker exposes live weather data to be consumed by Prometheus allowing 
 
 ## Docker Run
 ```docker
-docker run -d -p "9999:9877" -e CITY="New York" -e STATE="New York" -e COUNTRY="USA" -e API_KEY="YOURAPIKEY" -e EXPORTER_PORT="9877" oldstarfox/weathertracker
+docker run -d -p "9877:9877" -e CITY="New York" -e STATE="New York" -e COUNTRY="USA" -e API_KEY="YOURAPIKEY" -e EXPORTER_PORT="9877" oldstarfox/weathertracker
 ```
 
 ## Docker Compose
