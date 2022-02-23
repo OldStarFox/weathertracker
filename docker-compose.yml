@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  weathertracker:
+    image: weathertracker:latest
+    build: .
+    restart: unless-stopped
+    ports:
+      - "9877:9877"
+    environment:
+    - EXPORTER_PORT=9877
+    - CITY=**CITY_NAME**
+    - STATE=**STATE_NAME**
+    - COUNTRY=**COUNTRY CODE**
+    - POLLING_INTERVAL_SECONDS=15
+    - API_KEY=**OPEN WHEATER API KEY**
+    - ONE_API_DAILY_RATE_LIMIT=1000
+    - WEATHER_API_DAILY_RATE_LIMIT=86400
+    - AIR_POLUTION_API_DAILY_RATE_LIMIT=86400
