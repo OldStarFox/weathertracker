@@ -77,8 +77,7 @@ version: "3.3"
 
 services:
   weathertracker:
-    image: weathertracker:latest
-    build: .
+    image: oldstarfox/weathertracker:latest
     restart: unless-stopped
     ports:
       - "9877:9877"
