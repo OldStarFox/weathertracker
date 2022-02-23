@@ -35,11 +35,12 @@ What you will need before you start:
 ## Coming soon
 
 Docker compose for the deployment of the complete stack (Weather Tracker, Prometheus and Grafana)
+
 Pre-built Grafana Dashboard
 
 ## Getting started
 
-Weather Tracker exposes live weather data to be consumed by Prometheus allowing metrics tracking and plotting via Grafana(or other tool of choice). Currently the following weather data is available:
+Weather Tracker exposes live weather data to be consumed by Prometheus allowing metrics tracking and plotting via Grafana (or other tool of choice). Currently the following weather data is available:
 - Temperature in Celsius
 - Max Temperature in Celsius
 - Min Temperature in Celsius
