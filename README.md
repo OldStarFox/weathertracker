@@ -6,6 +6,7 @@
   - [Getting started](#getting-started)
   - [Coming soon](#coming-soon)
   - [Getting started](#getting-started-1)
+  - [Docker Run](#docker-run)
   - [Building and Deploying with Docker Compose](#building-and-deploying-with-docker-compose)
   - [Limitations](#limitations)
 
@@ -18,7 +19,8 @@
 
 ## Special Thanks and Attributions
 
-Open Weather Map: This project was only possible becuase of the nice people at Open Weather making their APIs freely available to the public. https://openweathermap.org/
+Open Weather Map: This project was only possible because of the nice people at Open Weather making their APIs freely available to the public. https://openweathermap.org/
+
 Thomas Stringer: I used Thomas Stringer post to kick start the Prometheus metrics export. I did alterations to expose the weather metrics but the code is basically the same: https://trstringer.com/quick-and-easy-prometheus-exporter/
 
 ## Getting started
@@ -35,7 +37,7 @@ Pre-built Grafana Dashboard
 
 ## Getting started
 
-Weather Tracker exposes live weather data to be consumed by Prometheus allowing metrics tracking and plotting via Grafana(or other tool of choice). Currenlty the following weather data is available:
+Weather Tracker exposes live weather data to be consumed by Prometheus allowing metrics tracking and plotting via Grafana(or other tool of choice). Currently the following weather data is available:
 - Temperature in Celsius
 - Max Temperature in Celsius
 - Min Temperature in Celsius
@@ -63,6 +65,11 @@ Weather Tracker exposes live weather data to be consumed by Prometheus allowing 
 - Fine particulate matter (PM2.5)
 - Ammonia (NH3) in μg/m3
 
+## Docker Run
+```docker
+docker run -d -p "9999:9877" -e CITY="New York" -e STATE="New York" -e COUNTRY="USA" -e API_KEY="YOURAPIKEY" -e EXPORTER_PORT="9877" oldstarfox/weathertracker
+```
+
 ## Building and Deploying with Docker Compose
 
 ```yaml
@@ -89,7 +96,7 @@ services:
 
 ## Limitations
 
-Open Weather Map data is limited by the number of API calls in a 24 hour period and they have different rates. The application was built with this in mind and will rate limit the calls to not go over the thresholds. If you are using a paied servive from Open Weather you may override the rates using the following environment variables on your docker container.
+Open Weather Map data is limited by the number of API calls in a 24 hour period and they have different rates. The application was built with this in mind and will rate limit the calls to not go over the thresholds. If you are using a payed service from Open Weather you may override the rates using the following environment variables on your docker container.
 - ONE_API_DAILY_RATE_LIMIT=1000 (default)
 - WEATHER_API_DAILY_RATE_LIMIT=86400 (default)
 - AIR_POLUTION_API_DAILY_RATE_LIMIT=86400 (default)
