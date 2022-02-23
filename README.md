@@ -7,7 +7,9 @@
   - [Coming soon](#coming-soon)
   - [Getting started](#getting-started-1)
   - [Docker Run](#docker-run)
-  - [Building and Deploying with Docker Compose](#building-and-deploying-with-docker-compose)
+  - [Docker Compose](#docker-compose)
+  - [Docker Hub Page](#docker-hub-page)
+  - [Git Hub Page](#git-hub-page)
   - [Limitations](#limitations)
 
 ## Features
@@ -70,7 +72,7 @@ Weather Tracker exposes live weather data to be consumed by Prometheus allowing 
 docker run -d -p "9999:9877" -e CITY="New York" -e STATE="New York" -e COUNTRY="USA" -e API_KEY="YOURAPIKEY" -e EXPORTER_PORT="9877" oldstarfox/weathertracker
 ```
 
-## Building and Deploying with Docker Compose
+## Docker Compose
 
 ```yaml
 version: "3.3"
@@ -92,6 +94,12 @@ services:
     - WEATHER_API_DAILY_RATE_LIMIT=86400
     - AIR_POLUTION_API_DAILY_RATE_LIMIT=86400
 ```
+
+## Docker Hub Page
+[Docker Hub](https://hub.docker.com/r/oldstarfox/weathertracker)
+
+## Git Hub Page
+[Git Hub](https://github.com/OldStarFox/weathertracker)
 
 ## Limitations
 
