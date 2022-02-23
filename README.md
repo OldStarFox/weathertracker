@@ -3,9 +3,9 @@
 - [Weather Tracker](#weather-tracker)
   - [Features](#features)
   - [Special Thanks and Attributions](#special-thanks-and-attributions)
-  - [Before you start](#before-you-start)
+  - [Before You Start](#before-you-start)
   - [Coming soon](#coming-soon)
-  - [Getting started](#getting-started)
+  - [Getting Started](#getting-started)
   - [Sample Output](#sample-output)
   - [Docker Run](#docker-run)
   - [Docker Compose](#docker-compose)
@@ -26,7 +26,7 @@ Open Weather Map: This project was only possible because of the nice people at O
 
 Thomas Stringer: I used Thomas Stringer post to kick start the Prometheus metrics export. I did alterations to expose the weather metrics but the code is basically the same: https://trstringer.com/quick-and-easy-prometheus-exporter/
 
-## Before you start
+## Before You Start
 
 What you will need before you start:
 - Open Weather API Key - Can be obtained by creating an account on their website. https://openweathermap.org/
@@ -39,7 +39,7 @@ Docker compose for the deployment of the complete stack (Weather Tracker, Promet
 
 Pre-built Grafana Dashboard
 
-## Getting started
+## Getting Started
 
 Weather Tracker exposes live weather data to be consumed by Prometheus allowing metrics tracking and plotting via Grafana (or other tool of choice). Currently the following weather data is available:
 - Temperature in Celsius
@@ -95,16 +95,16 @@ python_gc_collections_total{generation="2"} 0.0
 python_info{implementation="CPython",major="3",minor="8",patchlevel="12",version="3.8.12"} 1.0
 # HELP process_virtual_memory_bytes Virtual memory size in bytes.
 # TYPE process_virtual_memory_bytes gauge
-process_virtual_memory_bytes 2.66338304e+08
+process_virtual_memory_bytes 3.33553664e+08
 # HELP process_resident_memory_bytes Resident memory size in bytes.
 # TYPE process_resident_memory_bytes gauge
-process_resident_memory_bytes 2.8073984e+07
+process_resident_memory_bytes 2.8028928e+07
 # HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
 # TYPE process_start_time_seconds gauge
-process_start_time_seconds 1.64558888248e+09
+process_start_time_seconds 1.64562656969e+09
 # HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
 # TYPE process_cpu_seconds_total counter
-process_cpu_seconds_total 0.21
+process_cpu_seconds_total 0.19
 # HELP process_open_fds Number of open file descriptors.
 # TYPE process_open_fds gauge
 process_open_fds 10.0
@@ -113,66 +113,82 @@ process_open_fds 10.0
 process_max_fds 1.048576e+06
 # HELP weather_temperature Open Weather Temperature in Celsius
 # TYPE weather_temperature gauge
-weather_temperature{city="New York",country="USA",state="New York"} 14.07000000000005
+weather_temperature{city="New York",country="USA",state="New York"} 14.850000000000023
 # HELP weather_temperature_max Open Weather Max Temperature in Celsius
 # TYPE weather_temperature_max gauge
 weather_temperature_max{city="New York",country="USA",state="New York"} 17.400000000000034
 # HELP weather_temperature_min Open Weather Min Temperature in Celsius
 # TYPE weather_temperature_min gauge
-weather_temperature_min{city="New York",country="USA",state="New York"} 9.410000000000025
+weather_temperature_min{city="New York",country="USA",state="New York"} 10.629999999999995
 # HELP weather_feels_like Open Weather Feels Like Temperature in Celsius
 # TYPE weather_feels_like gauge
-weather_feels_like{city="New York",country="USA",state="New York"} 13.730000000000018
+weather_feels_like{city="New York",country="USA",state="New York"} 14.510000000000048
 # HELP weather_humidity Open Weather Humidity %
 # TYPE weather_humidity gauge
-weather_humidity{city="New York",country="USA",state="New York"} 84.0
+weather_humidity{city="New York",country="USA",state="New York"} 81.0
 # HELP weather_pressure Open Weather Pressure in hPa
 # TYPE weather_pressure gauge
-weather_pressure{city="New York",country="USA",state="New York"} 1015.0
+weather_pressure{city="New York",country="USA",state="New York"} 1014.0
 # HELP weather_visibility Open Weather Visibility in meters
 # TYPE weather_visibility gauge
 weather_visibility{city="New York",country="USA",state="New York"} 10000.0
 # HELP weather_wind_speed Open Weather Wind Speed in meters/sec
 # TYPE weather_wind_speed gauge
-weather_wind_speed{city="New York",country="USA",state="New York"} 4.63
+weather_wind_speed{city="New York",country="USA",state="New York"} 5.36
 # HELP weather_wind_degree Open Weather Wind Degree
 # TYPE weather_wind_degree gauge
-weather_wind_degree{city="New York",country="USA",state="New York"} 270.0
+weather_wind_degree{city="New York",country="USA",state="New York"} 360.0
 # HELP weather_wind_gust Open Weather Wind Gust meters/sec
 # TYPE weather_wind_gust gauge
-weather_wind_gust{city="New York",country="USA",state="New York"} 0.0
+weather_wind_gust{city="New York",country="USA",state="New York"} 8.49
 # HELP weather_rain_1h Open Weather Rain Volume 1h
 # TYPE weather_rain_1h gauge
+weather_rain_1h{city="New York",country="USA",state="New York"} 0.0
 # HELP weather_snow_1h Open Weather Snow Volume 1h
 # TYPE weather_snow_1h gauge
+weather_snow_1h{city="New York",country="USA",state="New York"} 0.0
 # HELP weather_clouds Open Weather Cloud Coverage %
 # TYPE weather_clouds gauge
+weather_clouds{city="New York",country="USA",state="New York"} 75.0
 # HELP weather_uvi Open Weather UVI Index
 # TYPE weather_uvi gauge
+weather_uvi{city="New York",country="USA",state="New York"} 0.76
 # HELP weather_dew_point Open Weather Dew Point
 # TYPE weather_dew_point gauge
+weather_dew_point{city="New York",country="USA",state="New York"} 11.480000000000018
 # HELP weather_sunset Open Weather Sunrise and Sunset
 # TYPE weather_sunset gauge
+weather_sunset{city="New York",country="USA",state="New York"} 1.645616349e+09
 # HELP weather_sunrise Open Weather Sunrise and Sunset
 # TYPE weather_sunrise gauge
+weather_sunrise{city="New York",country="USA",state="New York"} 1.645655997e+09
 # HELP weather_aqi Open Weather Air Quality Index
 # TYPE weather_aqi gauge
+weather_aqi{city="New York",country="USA",state="New York"} 1.0
 # HELP weather_co Open Weather Carbon monoxide (CO) in μg/m3
 # TYPE weather_co gauge
+weather_co{city="New York",country="USA",state="New York"} 333.79
 # HELP weather_no Open Weather Nitrogen monoxide (NO) in μg/m3
 # TYPE weather_no gauge
+weather_no{city="New York",country="USA",state="New York"} 1.57
 # HELP weather_no2 Open Weather Nitrogen dioxide (NO2) in μg/m3
 # TYPE weather_no2 gauge
+weather_no2{city="New York",country="USA",state="New York"} 25.02
 # HELP weather_o3 Open Weather Ozone (O3) in μg/m3
 # TYPE weather_o3 gauge
+weather_o3{city="New York",country="USA",state="New York"} 26.82
 # HELP weather_so2 Open Weather Sulphur dioxide (SO2) in μg/m3
 # TYPE weather_so2 gauge
+weather_so2{city="New York",country="USA",state="New York"} 3.99
 # HELP weather_pm2_5 Open Weather Fine particulate matter (PM2.5) in μg/m3
 # TYPE weather_pm2_5 gauge
+weather_pm2_5{city="New York",country="USA",state="New York"} 5.79
 # HELP weather_pm10 Open Weather Fine particulate matter (PM2.5)
 # TYPE weather_pm10 gauge
+weather_pm10{city="New York",country="USA",state="New York"} 9.26
 # HELP weather_nh3 Open Weather Ammonia (NH3) in μg/m3
 # TYPE weather_nh3 gauge
+weather_nh3{city="New York",country="USA",state="New York"} 0.9
 ```
 
 ## Docker Run
